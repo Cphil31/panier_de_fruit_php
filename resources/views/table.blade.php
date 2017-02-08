@@ -9,24 +9,20 @@
 	
 	<div class="ui grid">
 		<div class="five wide column"></div>
-		<div class="five wide column">  	
+		<div class="six wide column">  	
 			<table class="ui celled table">
 				<tr>
 					<th>Id</th>
 					<th>Name</th>
 					<th>Price</th>
 					<th>Stock</th>
-					<th>Ajouter/Suprimmer</th>
-
 				</tr>
 				@foreach($fruit as $key)
 				<tr>
 					<td>{{$key->id}}</td>
 					<td>{{$key->name}}</td>
 					<td>{{$key->price}}</td>
-					<td>{{$key->stock}}</td>
-					<td>
-						
+					<td>{{$key->stock}}
 						<form action="/products/add/{{$key->id}}" method="post">
 							{{csrf_field()}}
 							<button class="ui button">+</button>
@@ -37,12 +33,27 @@
 						</form>
 					</td>
 					
+					
 				</tr>
 				@endforeach
 
 			</table>
+			<div class="ui grid">
+				<div class="five wide column"></div>
+				<div class="five wide column"></div>
+				<div class="six Left floated right aligned wide column">
+						 
+						<form action="/products/form" method="post">
+						{{csrf_field()}}
+						<button class="ui button">ajouter Produit</button>
+							
+						</form>
+				</div>
+
+			</div>
+
 		</div>
-		<div class="four wide column"></div>
+		<div class="one wide column"></div>
 	</div>
 
 	

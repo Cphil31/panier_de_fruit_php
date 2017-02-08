@@ -18,3 +18,6 @@ Route::get('/products', "PanierController@getData");
 
 Route::post('/products/add/{id}', "PanierController@getAdd");
 Route::post('/products/down/{id}', "PanierController@getDown");
+
+Route::post('/products/form', "PanierController@show");
+

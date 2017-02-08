@@ -26,4 +26,9 @@ class PanierController extends Controller
 	return back();
    }
 
+   public function show(){
+
+   	return view('form');
+   
+}
 }
