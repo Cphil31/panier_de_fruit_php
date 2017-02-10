@@ -38,6 +38,12 @@
 						</form>
 					</td>
 					<td>
+						<form action="/products/edit/{{$key->id}}" method="get">
+						{{csrf_field()}}
+						<button type="submit" class="ui blue button">editer</button>
+						</form>
+					</td>
+					<td>
 						<form action="/products/delete/{{$key->id}}" method="get">
 						{{csrf_field()}}
 						<button type="submit" class="ui red button">Supprimer</button>
