@@ -23,7 +23,7 @@ class PanierController extends Controller
 		$fruit=Panier::find($id);
 		$fruit->stock--;
 		$fruit->save();
-		return redirect('/products');
+		return back();
 	}
 
 	public function getNew(){
@@ -38,9 +38,16 @@ class PanierController extends Controller
 	public function deleteProduct($id){
 		$user=Panier::find($id);
 		$user-> delete();
-
 		return back();
 	}
+	public function editer(){
+		$fruit=Panier::all();
+		return view('products/editer',['fruit'=>$fruit]);
+	}
 
+	public function backHome(Request $request){
+		Panier::create($request->all());
+		return redirect()->action('PanierController@index');
+	}
 
 }

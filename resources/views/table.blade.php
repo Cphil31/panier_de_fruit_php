@@ -16,8 +16,6 @@
 					<th>Name</th>
 					<th>Price</th>
 					<th>Stock</th>
-					<th>Ajouter</th>
-					<th>Supprimer</th>
 				</tr>
 				@foreach($fruit as $key)
 				<tr>
@@ -38,7 +36,7 @@
 						</form>
 					</td>
 					<td>
-						<form action="/products/edit/{{$key->id}}" method="get">
+						<form action="/products/editer" method="get">
 						{{csrf_field()}}
 						<button type="submit" class="ui blue button">editer</button>
 						</form>
