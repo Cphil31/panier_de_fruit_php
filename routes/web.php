@@ -14,10 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/products', "PanierController@getData");
+Route::get('/products', "PanierController@index");
 
 Route::post('/products/add/{id}', "PanierController@getAdd");
 Route::post('/products/down/{id}', "PanierController@getDown");
 
-Route::post('/products/form', "PanierController@show");
+// afficher le formulaire
+Route::get('/products/new', "PanierController@getNew");
+Route::post('/products/form',"PanierController@postInfo");
+Route::get('/products/delete/{id}','PanierController@deleteProduct');
+
+
+
 

@@ -16,20 +16,31 @@
 					<th>Name</th>
 					<th>Price</th>
 					<th>Stock</th>
+					<th>Ajouter</th>
+					<th>Supprimer</th>
 				</tr>
 				@foreach($fruit as $key)
 				<tr>
 					<td>{{$key->id}}</td>
 					<td>{{$key->name}}</td>
 					<td>{{$key->price}}</td>
-					<td>{{$key->stock}}
+					<td>{{$key->stock}}</td>
+					<td>
 						<form action="/products/add/{{$key->id}}" method="post">
 							{{csrf_field()}}
 							<button class="ui button">+</button>
 						</form>
+					</td>
+					<td>
 						<form action="/products/down/{{$key->id}}" method="post">
 							{{csrf_field()}}
 							<button class="ui button">-</button>
+						</form>
+					</td>
+					<td>
+						<form action="/products/delete/{{$key->id}}" method="get">
+						{{csrf_field()}}
+						<button type="submit" class="ui red button">Supprimer</button>
 						</form>
 					</td>
 					
@@ -39,15 +50,15 @@
 
 			</table>
 			<div class="ui grid">
-				<div class="five wide column"></div>
-				<div class="five wide column"></div>
-				<div class="six Left floated right aligned wide column">
+				<div class="ten wide column"></div>
+				<div class=" two column"></div>
+				<div class="four wide column">
 						 
-						<form action="/products/form" method="post">
+						<form action="/products/new" method="get">
 						{{csrf_field()}}
-						<button class="ui button">ajouter Produit</button>
-							
+						<button type="submit"  class="ui green button">ajouter Produit</button>
 						</form>
+						
 				</div>
 
 			</div>
