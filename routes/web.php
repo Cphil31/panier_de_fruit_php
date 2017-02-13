@@ -26,5 +26,7 @@ Route::post('/products/form',"PanierController@postInfo");
 Route::get('/products/delete/{id}','PanierController@deleteProduct');
 
 //editer
-Route::get('/products/editer',"PanierController@editer");
+Route::get('/products/editer/{id}',"PanierController@editer");
 
+
+Route::post('/products/modif/{id}','PanierController@reediter');

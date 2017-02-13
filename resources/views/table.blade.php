@@ -10,6 +10,7 @@
 	<div class="ui grid">
 		<div class="five wide column"></div>
 		<div class="six wide column">  	
+		<h1>EchopeOnChope</h1>
 			<table class="ui celled table">
 				<tr>
 					<th>Id</th>
@@ -36,7 +37,7 @@
 						</form>
 					</td>
 					<td>
-						<form action="/products/editer" method="get">
+						<form action="products/editer/{{$key->id}}" method="get">
 						{{csrf_field()}}
 						<button type="submit" class="ui blue button">editer</button>
 						</form>
